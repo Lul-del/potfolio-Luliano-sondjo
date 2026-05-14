@@ -4,6 +4,8 @@ import { About } from './components/About';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { ExperienceSection } from './components/ExperienceSection';
+import { WhyMe } from './components/WhyMe';
+import { Blog } from './components/Blog';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
@@ -16,6 +18,8 @@ export default function App() {
       <Skills />
       <Projects />
       <ExperienceSection />
+      <WhyMe />
+      <Blog />
       <Contact />
       <Footer />
     </div>

@@ -867,9 +867,20 @@ function OsBootTerminal() {
 
 /* ─────────────────────────────── Hero ─────────────────────────────────── */
 
+const STAT_DELAYS = ['enter-d-900', 'enter-d-1000', 'enter-d-1100', 'enter-d-1200'] as const;
+
 export function Hero() {
   const typedText = useTyping(typingWords);
   const [mobileOsOpen, setMobileOsOpen] = useState(false);
+  const [mounted,      setMounted]      = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setMounted(true), 80);
+    return () => clearTimeout(t);
+  }, []);
+
+  const enter = 'transition-all duration-700 ease-out';
+  const up    = mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6';
 
   return (
     <section id="accueil" className="relative min-h-screen flex items-center overflow-hidden">
@@ -884,24 +895,24 @@ export function Hero() {
 
           {/* Left */}
           <div>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-3 sm:mb-4 leading-tight">
+            <h1 className={`font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-3 sm:mb-4 leading-tight ${enter} enter-d-200 ${up}`}>
               Salut, je suis<br />
               <span className="text-gradient">Luliano Sondjo</span>
             </h1>
 
-            <div className="flex items-center gap-2 mb-4 sm:mb-6">
+            <div className={`flex items-center gap-2 mb-4 sm:mb-6 ${enter} enter-d-350 ${up}`}>
               <Terminal className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400 shrink-0" />
               <span className="font-mono text-sm sm:text-base md:text-lg text-gray-300 truncate">
                 {typedText}<span className="text-violet-400 animate-pulse">|</span>
               </span>
             </div>
 
-            <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-lg mb-6 sm:mb-8 leading-relaxed">
+            <p className={`text-gray-300 text-sm sm:text-base md:text-lg max-w-lg mb-6 sm:mb-8 leading-relaxed ${enter} enter-d-500 ${up}`}>
               Développeur passionné avec <span className="text-white font-semibold">5 ans d'expérience</span> dans la création
               d'applications web modernes, performantes et élégantes.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
+            <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 ${enter} enter-d-600 ${up}`}>
               <a href="#projects"
                 className="group px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-all hover:scale-105 text-sm sm:text-base">
                 Voir mes projets
@@ -913,14 +924,14 @@ export function Hero() {
               </a>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <div className={`flex flex-wrap items-center gap-3 sm:gap-4 ${enter} enter-d-700 ${up}`}>
               <span className="text-gray-300 text-xs sm:text-sm">Retrouvez-moi sur :</span>
               {[
-                { icon: <GithubIcon className="w-5 h-5" />, label: 'GitHub' },
-                { icon: <LinkedinIcon className="w-5 h-5" />, label: 'LinkedIn' },
-                { icon: <Mail className="w-5 h-5" />, label: 'Email' },
+                { icon: <GithubIcon   className="w-5 h-5" />, label: 'GitHub',    href: 'https://github.com/Lul-del' },
+                { icon: <LinkedinIcon className="w-5 h-5" />, label: 'LinkedIn',  href: 'https://www.linkedin.com/in/c%C3%A9phas-sondjo-65145b3b6/' },
+                { icon: <Mail         className="w-5 h-5" />, label: 'Email',     href: 'mailto:cephassondjo@gmail.com' },
               ].map((s, i) => (
-                <a key={i} href="#"
+                <a key={i} href={s.href} target={s.href.startsWith('mailto') ? undefined : '_blank'} rel="noopener noreferrer" title={s.label}
                   className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-violet-500/20 hover:border-violet-500/30 transition-all">
                   {s.icon}
                 </a>
@@ -928,7 +939,7 @@ export function Hero() {
             </div>
 
             {/* Mobile — bouton pour ouvrir l'OS */}
-            <div className="lg:hidden mt-6">
+            <div className={`lg:hidden mt-6 ${enter} enter-d-800 ${up}`}>
               <button
                 type="button"
                 onClick={() => setMobileOsOpen(true)}
@@ -946,7 +957,7 @@ export function Hero() {
           </div>
 
           {/* Right — OS boot terminal (desktop only) */}
-          <div className="hidden lg:block">
+          <div className={`hidden lg:block transition-all duration-700 ease-out enter-d-400 ${mounted ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-10 scale-95'}`}>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-violet-500/20 to-cyan-500/20 rounded-3xl blur-2xl" />
               <div className="relative"><OsBootTerminal /></div>
@@ -957,7 +968,7 @@ export function Hero() {
         {/* Stats */}
         <div className="mt-10 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {stats.map((s, i) => (
-            <div key={i} className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-white/[0.03] border border-white/5">
+            <div key={i} className={`flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-white/[0.03] border border-white/5 ${enter} ${STAT_DELAYS[i]} ${up}`}>
               <div className="text-violet-400">{s.icon}</div>
               <div>
                 <p className="font-display text-xl font-bold text-white">{s.value}</p>
@@ -969,7 +980,7 @@ export function Hero() {
       </div>
 
       <a href="#about" aria-label="Défiler vers la section À propos"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-500 animate-bounce">
+        className={`absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-500 animate-bounce ${enter} enter-d-1200 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
         <ChevronDown className="w-6 h-6" />
       </a>
 

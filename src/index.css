@@ -295,6 +295,27 @@
     transition-delay: var(--stagger, 0ms);
   }
 
+  /* Entrance animation delay ladder — used by Navbar & Hero */
+  .enter-d-0    { transition-delay: 0ms; }
+  .enter-d-50   { transition-delay: 50ms; }
+  .enter-d-100  { transition-delay: 100ms; }
+  .enter-d-150  { transition-delay: 150ms; }
+  .enter-d-200  { transition-delay: 200ms; }
+  .enter-d-250  { transition-delay: 250ms; }
+  .enter-d-300  { transition-delay: 300ms; }
+  .enter-d-350  { transition-delay: 350ms; }
+  .enter-d-400  { transition-delay: 400ms; }
+  .enter-d-450  { transition-delay: 450ms; }
+  .enter-d-500  { transition-delay: 500ms; }
+  .enter-d-550  { transition-delay: 550ms; }
+  .enter-d-600  { transition-delay: 600ms; }
+  .enter-d-700  { transition-delay: 700ms; }
+  .enter-d-800  { transition-delay: 800ms; }
+  .enter-d-900  { transition-delay: 900ms; }
+  .enter-d-1000 { transition-delay: 1000ms; }
+  .enter-d-1100 { transition-delay: 1100ms; }
+  .enter-d-1200 { transition-delay: 1200ms; }
+
   .code-typewriter-bg {
     color: rgba(255, 230, 0, 0.2);
     filter: drop-shadow(0 0 10px rgba(255, 230, 0, 0.38));

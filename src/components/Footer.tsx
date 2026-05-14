@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Mail, ArrowRight, ChevronDown } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './icons';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, XIcon, InstagramIcon, BehanceIcon } from './icons';
 
 const socialLinks = [
-  { icon: <GithubIcon className="w-4 h-4" />, label: 'GitHub' },
-  { icon: <LinkedinIcon className="w-4 h-4" />, label: 'LinkedIn' },
-  { icon: <Mail className="w-4 h-4" />, label: 'Email' },
+  { icon: <GithubIcon    className="w-4 h-4" />, label: 'GitHub',    href: 'https://github.com/Lul-del' },
+  { icon: <LinkedinIcon  className="w-4 h-4" />, label: 'LinkedIn',  href: 'https://www.linkedin.com/in/c%C3%A9phas-sondjo-65145b3b6/' },
+  { icon: <XIcon         className="w-4 h-4" />, label: 'X/Twitter', href: 'https://x.com/CephasSondjo' },
+  { icon: <InstagramIcon className="w-4 h-4" />, label: 'Instagram', href: 'https://www.instagram.com/sondjoluliano/' },
+  { icon: <BehanceIcon   className="w-4 h-4" />, label: 'Behance',   href: 'https://behance.net/cephasdev' },
 ];
 
 export function Footer() {
@@ -44,12 +46,12 @@ export function Footer() {
           </div>
 
           <p className="text-gray-500 text-sm font-mono">
-            &copy; 2025 Luliano Sondjo Built with <span className="text-violet-400">React</span> & <span className="text-cyan-400">Tailwind</span>
+            &copy; 2026 Luliano Sondjo &mdash; Portfolio fullstack moderne.
           </p>
 
           <div className="flex gap-3">
             {socialLinks.map((s, i) => (
-              <a key={i} href="#"
+              <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" title={s.label}
                 className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-gray-500 hover:text-white hover:bg-violet-500/20 transition-all">
                 {s.icon}
               </a>
