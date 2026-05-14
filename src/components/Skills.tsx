@@ -96,10 +96,11 @@ function SkillCard({ cat, catIdx, inView }: { cat: SkillCat; catIdx: number; inV
           <Settings className={`w-9 h-9 text-gray-600 ${inView ? 'animate-spin' : ''}`} />
         </div>
       ) : compact ? (
-        /* 5 items → 3 top + 2 centered below (no 3rd row) */
-        <div className="flex flex-col gap-4 animate-[fadeUp_0.4s_ease-out_forwards]">
-          <div className="grid grid-cols-3 gap-3 place-items-center">
-            {cat.items.slice(0, 3).map((skill, j) => (
+        /* 5 items → losange 2-1-2 */
+        <div className="flex flex-col gap-3 animate-[fadeUp_0.4s_ease-out_forwards]">
+          {/* Rangée 1 : A  B */}
+          <div className="flex justify-around">
+            {cat.items.slice(0, 2).map((skill, j) => (
               <RadialSkill
                 key={j}
                 name={skill.name} level={skill.level}
@@ -109,7 +110,17 @@ function SkillCard({ cat, catIdx, inView }: { cat: SkillCat; catIdx: number; inV
               />
             ))}
           </div>
-          <div className="flex justify-center gap-6">
+          {/* Rangée 2 : C centré */}
+          <div className="flex justify-center">
+            <RadialSkill
+              name={cat.items[2].name} level={cat.items[2].level}
+              textColor={textColor} loaded={loaded}
+              catIdx={catIdx} itemIdx={2}
+              compact
+            />
+          </div>
+          {/* Rangée 3 : D  E */}
+          <div className="flex justify-around">
             {cat.items.slice(3).map((skill, j) => (
               <RadialSkill
                 key={j + 3}
