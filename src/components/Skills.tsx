@@ -69,7 +69,7 @@ function SkillCard({ cat, catIdx, inView }: { cat: SkillCat; catIdx: number; inV
 
   useEffect(() => {
     if (!inView) return;
-    const t = setTimeout(() => setLoaded(true), 650 + catIdx * 160);
+    const t = setTimeout(() => setLoaded(true), 3000 + catIdx * 300);
     return () => clearTimeout(t);
   }, [inView, catIdx]);
 
