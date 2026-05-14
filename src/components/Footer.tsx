@@ -30,7 +30,7 @@ export function Footer() {
             Transformons vos idées en réalité. Contactez-moi pour discuter de votre prochain projet.
           </p>
           <a href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold hover:opacity-90 transition-all hover:scale-105">
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-violet-500 text-[#0D0D13] font-semibold hover:bg-violet-400 transition-all hover:scale-105">
             Démarrer un projet <ArrowRight className="w-5 h-5" />
           </a>
         </div>

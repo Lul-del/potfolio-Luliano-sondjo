@@ -47,8 +47,7 @@ export const projects = [
     tags: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL', 'Redis'],
     icon: <Layers className="w-6 h-6" />,
     color: 'from-violet-500 to-purple-600',
-    stars: 128,
-    forks: 34,
+    category: 'Full Stack',
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
   },
   {
@@ -57,8 +56,7 @@ export const projects = [
     tags: ['React', 'Python', 'WebSocket', 'OpenAI', 'Docker'],
     icon: <Cpu className="w-6 h-6" />,
     color: 'from-cyan-500 to-blue-600',
-    stars: 256,
-    forks: 67,
+    category: 'Full Stack',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop',
   },
   {
@@ -67,8 +65,7 @@ export const projects = [
     tags: ['React', 'D3.js', 'Node.js', 'MongoDB', 'AWS'],
     icon: <Zap className="w-6 h-6" />,
     color: 'from-emerald-500 to-teal-600',
-    stars: 89,
-    forks: 21,
+    category: 'Frontend',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
   },
   {
@@ -77,8 +74,7 @@ export const projects = [
     tags: ['React Native', 'Firebase', 'MapBox', 'HealthKit'],
     icon: <Smartphone className="w-6 h-6" />,
     color: 'from-pink-500 to-rose-600',
-    stars: 175,
-    forks: 42,
+    category: 'Mobile',
     image: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&h=400&fit=crop',
   },
   {
@@ -87,8 +83,7 @@ export const projects = [
     tags: ['Terraform', 'Kubernetes', 'GitHub Actions', 'Prometheus'],
     icon: <GitBranch className="w-6 h-6" />,
     color: 'from-amber-500 to-orange-600',
-    stars: 94,
-    forks: 28,
+    category: 'DevOps',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
   },
   {
@@ -97,8 +92,7 @@ export const projects = [
     tags: ['Node.js', 'Express', 'Redis', 'JWT', 'Swagger'],
     icon: <Globe className="w-6 h-6" />,
     color: 'from-indigo-500 to-violet-600',
-    stars: 143,
-    forks: 38,
+    category: 'Backend',
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop',
   },
 ];
@@ -139,8 +133,8 @@ export const experience = [
 ];
 
 export const stats = [
-  { icon: <Coffee className="w-5 h-5" />, value: '5',  label: "Années d'expérience" },
-  { icon: <Rocket className="w-5 h-5" />, value: '50+', label: 'Projets livrés' },
-  { icon: <Star className="w-5 h-5" />, value: '1.2k', label: 'Stars GitHub' },
-  { icon: <Users className="w-5 h-5" />, value: '30+', label: 'Clients satisfaits' },
+  { icon: <Coffee className="w-5 h-5" />, value: '5 ans',     label: "d'expérience" },
+  { icon: <Rocket className="w-5 h-5" />, value: 'Web & IA',  label: 'Projets livrés' },
+  { icon: <Star   className="w-5 h-5" />, value: 'OSS',       label: 'Open Source' },
+  { icon: <Users  className="w-5 h-5" />, value: 'Dispo',     label: 'Clients satisfaits' },
 ];

@@ -235,7 +235,7 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-all hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+                  className="w-full py-3.5 rounded-xl bg-violet-500 text-[#0D0D13] font-semibold flex items-center justify-center gap-2 hover:bg-violet-400 transition-all hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
                 >
                   {status === 'loading' && <><Loader2 className="w-5 h-5 animate-spin" /> Envoi en cours...</>}
                   {status === 'success' && <><CheckCircle2 className="w-5 h-5" /> Demande envoyée !</>}

@@ -2,17 +2,19 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const links = [
-  { href: '#accueil', label: 'Accueil' },
-  { href: '#about', label: 'À propos' },
-  { href: '#skills', label: 'Compétences' },
-  { href: '#projects', label: 'Projets' },
+  { href: '#accueil',    label: 'Accueil' },
+  { href: '#about',      label: 'À propos' },
+  { href: '#skills',     label: 'Compétences' },
+  { href: '#projects',   label: 'Projets' },
   { href: '#experience', label: 'Expérience' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#blog',       label: 'Blog' },
+  { href: '#contact',    label: 'Contact' },
 ];
 
 const LINK_DELAYS = [
   'enter-d-200', 'enter-d-250', 'enter-d-300',
   'enter-d-350', 'enter-d-400', 'enter-d-450',
+  'enter-d-500',
 ] as const;
 
 export function Navbar() {
@@ -68,7 +70,7 @@ export function Navbar() {
             ))}
             <a
               href="#contact"
-              className={`px-4 py-2 rounded-lg bg-gradient-to-r from-violet-500 to-cyan-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity ${enter} enter-d-500 ${vis}`}
+              className={`px-4 py-2 rounded-lg bg-violet-500 text-[#0D0D13] text-sm font-semibold hover:bg-violet-400 transition-colors ${enter} enter-d-550 ${vis}`}
             >
               Me contacter
             </a>
@@ -95,7 +97,7 @@ export function Navbar() {
               </a>
             ))}
             <a href="#contact" onClick={() => setMobileOpen(false)}
-              className="block text-center mt-3 px-5 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold">
+              className="block text-center mt-3 px-5 py-3 rounded-lg bg-violet-500 text-[#0D0D13] font-semibold hover:bg-violet-400 transition-colors">
               Me contacter
             </a>
           </div>
