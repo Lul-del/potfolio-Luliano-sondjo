@@ -34,17 +34,6 @@ const typingWords = [
   "Problem Solver",
 ];
 
-const MOBILE_CODE = `> LULIANO_OS v2.0.26
-[BOOT] Loading kernel ... OK
-[NET ] Secure link ..... OK
-[AI  ] Neural core ..... ACTIVE
-════════════════════════
-> whoami
-  Luliano Sondjo
-  Dev Web & IA · Vibe Coding
-> status
-  [■■■■■■■■■■] 100% Ready`;
-
 type BootLine = { text: string; color: string; pause: number };
 
 const SHUTDOWN_LINES = [
@@ -324,25 +313,6 @@ function processCmd(raw: string): string {
 }
 
 /* ─────────────────────────────── small components ─────────────────────── */
-
-function CodeTypewriterBg() {
-  const [idx, setIdx] = useState(0);
-  useEffect(() => {
-    if (idx >= MOBILE_CODE.length) return;
-    const t = setTimeout(() => setIdx((i) => i + 1), 32);
-    return () => clearTimeout(t);
-  }, [idx]);
-  return (
-    <div className="absolute inset-0 lg:hidden overflow-hidden pointer-events-none flex items-center justify-center px-8">
-      <pre className="code-typewriter-bg font-mono text-[0.7rem] sm:text-xs leading-relaxed select-none">
-        {MOBILE_CODE.slice(0, idx)}
-        {idx < MOBILE_CODE.length && (
-          <span className="code-typewriter-cursor">█</span>
-        )}
-      </pre>
-    </div>
-  );
-}
 
 function TuxIcon() {
   return (
@@ -1225,8 +1195,6 @@ export function Hero() {
       <div className="absolute inset-0 grid-bg" />
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-violet-500/10 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px]" />
-
-      <CodeTypewriterBg />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
