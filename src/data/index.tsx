@@ -1,7 +1,7 @@
 import {
   Palette,
   Layers, Cpu, Zap, Smartphone, GitBranch, Globe,
-  Coffee, Rocket, Star, Users,
+  Coffee, Rocket, Star, Users, Database,
 } from 'lucide-react';
 
 export const skills = [
@@ -12,18 +12,19 @@ export const skills = [
     items: [
       { name: 'HTML / CSS',   level: 90 },
       { name: 'JavaScript',   level: 85 },
+      { name: 'PHP',          level: 60 },
       { name: 'React',        level: 82 },
       { name: 'Node.js',      level: 76 },
     ],
   },
   {
-    category: 'Mobile & IA',
+    category: 'App Dev & IA',
     icon: <Smartphone className="w-5 h-5" />,
     color: 'from-cyan-500 to-blue-500',
     items: [
       { name: 'React Native', level: 70 },
       { name: 'Expo',         level: 70 },
-      { name: 'Python IA',    level: 25 },
+      { name: 'Python',       level: 40 },
       { name: 'Chatbots',     level: 60 },
     ],
   },
@@ -32,10 +33,22 @@ export const skills = [
     icon: <Palette className="w-5 h-5" />,
     color: 'from-emerald-500 to-teal-500',
     items: [
-      { name: 'Figma',        level: 78 },
-      { name: 'Git / GitHub', level: 85 },
-      { name: 'Linux / Pop!OS', level: 80 },
+      { name: 'Figma',            level: 78 },
+      { name: 'Canva',            level: 72 },
+      { name: 'Git / GitHub',     level: 85 },
+      { name: 'Linux / Pop!OS',   level: 80 },
       { name: 'VS Code / Cursor', level: 90 },
+    ],
+  },
+  {
+    category: 'Bases de données',
+    icon: <Database className="w-5 h-5" />,
+    color: 'from-amber-500 to-orange-500',
+    items: [
+      { name: 'MySQL',       level: 80 },
+      { name: 'Firebase',    level: 70 },
+      { name: 'MongoDB',     level: 70 },
+      { name: 'PostgreSQL',  level: 50 },
     ],
   },
 ];
